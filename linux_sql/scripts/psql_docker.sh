@@ -62,8 +62,3 @@ then
   echo "invalid input please choose from create/start/stop"
   exit 1
 fi
-
-
-
-
-
