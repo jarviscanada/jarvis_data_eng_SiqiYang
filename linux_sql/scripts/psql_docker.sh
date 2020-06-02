@@ -57,8 +57,5 @@ then
 fi
 
 #if the first argument is invalid print error
-if [ "$operation" != "create" ] && [ "$operation" != "start" ] && [ "$operation" != "stop" ]
-then
-  echo "invalid input please choose from create/start/stop"
-  exit 1
-fi
+echo "invalid input please choose from create/start/stop"
+exit 1
