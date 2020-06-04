@@ -1,8 +1,7 @@
 # Introduction
-Cluster Monitor Agent is an internal tool that monitors the cluster resources such as hardware information, and some usage data for each network node which is connected by a switch.it uses two bash-scripts to collect the information from each host and store the data in Database.It helps the infrastructure team to make decision for the future planning. such as add/remove server. 
+Cluster Monitor Agent is an internal tool that monitors the cluster resources such as hardware information, and some usage data for each network node which is connected by a switch.it uses two bash-scripts to collect the information from each host and store the data in the Database.It helps the infrastructure team to make the decision for future planning. such as add/remove servers. 
 
 # Quick Start
-Use markdown code block for your quick start commands
 - Start a psql instance using psql_docker.sh
 ``./scripts/psql_docker.sh start|stop|create [db_username][db_password]``
 - Create tables using ddl.sql
@@ -21,7 +20,6 @@ crontab -e
 ![](<https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/blob/readme/linux_sql/assets/architecture.png>)
 
 # Database Modeling
-Describe the schema of each table using markdown table syntax (do not put any sql code)
 - `host_info`
 
 Column Name | Contents
@@ -49,7 +47,7 @@ disk_io| the number of I/O disk
 disk_available | the available amount of disk available.
 
 ## Scripts
-Shell script description and usage (use markdown code block for script usage)
+
 - psql_docker.sh: it is used to create the docker container using psql-image, and start and stop the container.
 ```
 ## used to create the psql container
@@ -81,8 +79,7 @@ psql -h localhost -U username -d host_agent -f sql/queries.sql
 ```
 
 ## Improvements 
-Write at least three things you want to improve 
 - We can modify the script to handle the hardware information update.
 - Currently, we still have some commands that need to be entered by hand, we can generate those commands into scripts as well.
-- Can create a user interface rather than execute these bash scripts and RDBMS files through terminal. 
+- Can create a user interface rather than execute these bash scripts and RDBMS files through the terminal. 
 ```
