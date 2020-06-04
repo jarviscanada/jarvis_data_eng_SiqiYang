@@ -18,7 +18,7 @@ crontab -e
 ```
 
 # Architecture Diagram
-![architecture](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/tree/readme/linux_sql/assets/architecture.png)
+![](<https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/blob/readme/linux_sql/assets/architecture.png>)
 
 # Database Modeling
 Describe the schema of each table using markdown table syntax (do not put any sql code)
