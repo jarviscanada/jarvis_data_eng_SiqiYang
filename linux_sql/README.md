@@ -1,23 +1,31 @@
 # Introduction
-Cluster Monitor Agent is an internal tool that monitors the cluster resources such as hardware information, and some usage data for each network node which is connected by a switch.it uses two bash-scripts to collect the information from each host and store the data in the Database.It helps the infrastructure team to make the decision for future planning. such as add/remove servers. 
+Cluster Monitor Agent is an internal tool that monitors the cluster resources such as hardware information, and some usage data every one minute for each network node that is connected by a switch.it uses two bash-scripts to collect the information from each host and store the data in the Database.It uses docker container to provision the database. It helps the infrastructure team to make the decision for future planning. such as add/remove servers. 
 
 # Quick Start
-- Start a psql instance using psql_docker.sh
-``./scripts/psql_docker.sh start|stop|create [db_username][db_password]``
-- Create tables using ddl.sql
-`` psql -h localhost -U username -d host_agent -f ./ddl.sql``
-- Insert hardware specs data into the db using host_info.sh
-``./scripts/host_info.sh psql_host psql_port db_name psql_user psql_password``
-- Insert hardware usage data into the db using host_usage.sh
-``scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password``
-- Crontab setup
 ```
+- Start a psql instance using psql_docker.sh
+./scripts/psql_docker.sh start|stop|create [db_username][db_password]``
+```
+```
+- Create tables using ddl.sql
+psql -h localhost -U username -d host_agent -f ./ddl.sql``
+```
+```
+- Insert hardware specs data into the db using host_info.sh
+./scripts/host_info.sh psql_host psql_port db_name psql_user psql_password``
+```
+```
+- Insert hardware usage data into the db using host_usage.sh
+./scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password``
+```
+```
+- Crontab setup
 crontab -e
 * * * * * bash /home/centos/dev/jrvs/bootcamp/linux_sql/host_agent/scripts/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.lo
 ```
 
 # Architecture Diagram
-![](<https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/blob/readme/linux_sql/assets/architecture.png>)
+![](<https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/blob/readme/linux_sql/assets/linux.png>)
 
 # Database Modeling
 - `host_info`
@@ -72,8 +80,9 @@ bash scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
 crontab -e
 * * * * * bash /home/centos/dev/jrvs/bootcamp/linux_sql/host_agent/scripts/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.log
 ```
-- queries.sql: used to produce the output of the problem 1.Group hosts by CPU number and sort by their memory size in descending order.
-2.Average used memory in percentage over 5 minutes interval for each host.
+- queries.sql: used to produce the output of the problem 
+1. Group hosts by CPU number and sort by their memory size in descending order.
+2. Average used memory in percentage over 5 minutes interval for each host.
 ```
 psql -h localhost -U username -d host_agent -f sql/queries.sql
 ```
