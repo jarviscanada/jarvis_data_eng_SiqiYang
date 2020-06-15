@@ -35,8 +35,8 @@ public class RegexImplement implements RegexExc{
     public static void main (String [] args) {
         RegexImplement a = new RegexImplement();
         System.out.println(a.matchJpeg("adasd.JpEg"));
-        System.out.println(a.matchI("0.0.0.0"));
-        System.out.println(a.isEmptyLine(" "));
+        System.out.println(a.matchI("3.3.0.0.0.0"));
+        System.out.println(a.isEmptyLine(" 333"));
     }
 
 

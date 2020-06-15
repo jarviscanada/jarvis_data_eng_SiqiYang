@@ -1,13 +1,17 @@
 package ca.jrvs.apps.grep;
-
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class JavaGrepImp implements JavaGrep {
     private String regex;
     private String rootPath;
     private String outFile;
+    final Logger logger = LoggerFactory.getLogger(JavaGrepImp.class);
     /**
      * Top level search workflow
      *
@@ -15,7 +19,16 @@ public class JavaGrepImp implements JavaGrep {
      */
     @Override
     public void process() throws IOException {
-
+        List<File>files = listFiles(this.rootPath);
+        List<String> matchedLines = new ArrayList<String>();
+        for (File i : files) {
+            for(String j : readLines(i)) {
+                if (containsPattern(j)) {
+                    matchedLines.add(j);
+                }
+            }
+        }
+        writeToFile(matchedLines);
     }
 
     /**
@@ -25,8 +38,10 @@ public class JavaGrepImp implements JavaGrep {
      * @return files under the directory.
      */
     @Override
-    public List<File> istFiles(String rootDir) {
-        return null;
+    public List<File> listFiles(String rootDir) {
+        File files = new File(rootDir);
+        List<File> filesList = Arrays.asList(files.listFiles());
+        return filesList;
     }
 
     /**
@@ -37,8 +52,24 @@ public class JavaGrepImp implements JavaGrep {
      * @throws IllegalArgumentException if a given file is not a files.
      */
     @Override
-    public List<String> readLines(File inputFile) throws IllegalArgumentException {
-        return null;
+    public List<String> readLines(File inputFile) throws IllegalArgumentException, IOException {
+        List<String> lines = new ArrayList<String>();
+        try {
+            FileReader reader = new FileReader(inputFile);
+            BufferedReader bfReader = new BufferedReader(reader);
+            String line = bfReader.readLine();
+            while(line!= null){
+                lines.add(line);
+                line = bfReader.readLine();
+            }
+            bfReader.close();
+            reader.close();
+        }catch(IllegalArgumentException e) {
+            throw new IllegalArgumentException("the given file is not a file",e);
+        }catch (IOException e) {
+            throw new IOException("could not open or read a file",e);
+        }
+        return lines;
     }
 
     /**
@@ -49,7 +80,7 @@ public class JavaGrepImp implements JavaGrep {
      */
     @Override
     public boolean containsPattern(String line) {
-        return false;
+        return line.matches(this.regex);
     }
 
     /**
@@ -60,6 +91,20 @@ public class JavaGrepImp implements JavaGrep {
      */
     @Override
     public void writeToFile(List<String> lines) throws IOException {
+        try{
+            File desFile = new File(this.outFile);
+            FileWriter desFileWriter = new FileWriter(desFile);
+            BufferedWriter bfDesWriter = new BufferedWriter(desFileWriter);
+            for(String i : lines) {
+                bfDesWriter.write(i);
+                bfDesWriter.newLine();
+            }
+            bfDesWriter.close();
+            desFileWriter.close();
+        }catch (IOException e) {
+            throw new IOException("could not write to file", e);
+        }
+
 
     }
 
@@ -85,5 +130,21 @@ public class JavaGrepImp implements JavaGrep {
 
     public void setOutFile(String outFile) {
         this.outFile = outFile;
+    }
+
+    public static void main(String[] args) {
+        if (args.length != 3) {
+            throw new IllegalArgumentException("USAGE JavaGrep regex rootPath outFile");
+        }
+        JavaGrepImp javaGrepImp = new JavaGrepImp();
+        javaGrepImp.setRegex(args[0]);
+        javaGrepImp.setRootPath(args[1]);
+        javaGrepImp.setOutFile(args[2]);
+
+        try {
+            javaGrepImp.process();
+        }catch (Exception ex) {
+
+        }
     }
 }
