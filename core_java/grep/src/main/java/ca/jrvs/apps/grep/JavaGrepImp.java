@@ -40,8 +40,16 @@ public class JavaGrepImp implements JavaGrep {
     @Override
     public List<File> listFiles(String rootDir) {
         File files = new File(rootDir);
-        List<File> filesList = Arrays.asList(files.listFiles());
-        return filesList;
+        List<File> resultFiles = new ArrayList<File>();
+        for(File i : files.listFiles()) {
+            if( i.isFile()) {
+                resultFiles.add(i);
+            }else if (i.isDirectory()){
+                resultFiles.addAll(listFiles(i.getAbsolutePath()));
+            }
+        }
+
+        return resultFiles;
     }
 
     /**
@@ -120,7 +128,7 @@ public class JavaGrepImp implements JavaGrep {
         return outFile;
     }
 
-    public void setRegex(String regex) {
+    public  void setRegex(String regex) {
         this.regex = regex;
     }
 
@@ -144,7 +152,7 @@ public class JavaGrepImp implements JavaGrep {
         try {
             javaGrepImp.process();
         }catch (Exception ex) {
-
+            javaGrepImp.logger.error("Usage JavaGrep regex rootPath outFile", ex);
         }
     }
 }
