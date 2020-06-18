@@ -40,7 +40,7 @@ writeToFile(matchedLines)
 ```
 
 # Performance Issue
-If we are dealing with the large files, our program will not have a bad performance, and we may encounter the out of memory problem. This is because we keep the files all in the memory since we store them in the list.But when we choose to use the stream along with lambda, we can avoid storing all the lines in the memory.
+If we are dealing with the large files, our program will not have a good performance, and we may encounter the out of memory problem. This is because we keep the files all in the memory since we store them in the list.But when we choose to use the stream along with lambda, we can avoid storing all the lines in the memory.
 
 # Improvement
 1. Since we have two versions for the application, we can set a pre-option for use. If users are dealing the large files, choose the stream and lambda version. Otherwise, they can use the standard Java I/O version for the files.
