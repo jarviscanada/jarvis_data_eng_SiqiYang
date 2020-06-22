@@ -1,5 +1,8 @@
 package ca.jrvs.apps.jdbc;
 
+import com.sun.org.apache.xpath.internal.operations.Or;
+import sun.print.CUPSPrinter;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,11 +14,10 @@ public class JDBCExecutor {
                 "hplussport", "postgres","12345");
         try {
             Connection connection = dcm.getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT COUNT(*) FROM CUSTOMER");
-            while(resultSet.next()) {
-                System.out.println(resultSet.getInt(1));
-            }
+            CustomerDAO customerDAO = new CustomerDAO(connection);
+            OrderDAO orderDAO = new OrderDAO(connection);
+            Order order = orderDAO.findById(1000);
+            System.out.println(order);
         }catch(SQLException e) {
             e.printStackTrace();
         }
