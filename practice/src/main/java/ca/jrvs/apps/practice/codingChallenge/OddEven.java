@@ -22,11 +22,4 @@ public class OddEven {
 
   }
 
-  public static void main(String[] args) {
-    int a = 4;
-    OddEven b = new OddEven();
-    System.out.println(b.oddEvenBit(a));
-    System.out.print(a^1);
-  }
-
 }
