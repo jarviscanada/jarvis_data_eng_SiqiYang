@@ -19,10 +19,7 @@ import org.junit.Test;
  */
 public class TwitterDaoTest {
   TwitterDao twitterDao;
-  Tweet tweet;
-  Coordinates coordinates;
-  double[] coordinate;
-  Tweet postOne;
+  Tweet newTweet;
   @Before
   public void setUp() throws Exception {
     String consumerKey = System.getenv("consumerKey");
@@ -32,44 +29,60 @@ public class TwitterDaoTest {
     HttpHelper httpHelper = new TwitterHttpHelper(consumerKey, consumerSecret, accessToken,
         tokenSecret);
     twitterDao = new TwitterDao(httpHelper);
-    tweet = new Tweet();
+    String hashTag = "#abc";
+    String text = "somtext " + hashTag + " " + System.currentTimeMillis();
+    Double lat = 1d;
+    Double lon = -1d;
+    Tweet postTweet = new Tweet();
+    postTweet.setText(text);
 
-    coordinates = new Coordinates();
-    coordinate = new double[2];
-    coordinate[0] = -122.42284884;
-    coordinate[1] = 46.45645645;
-
-    coordinates.setCoordinates(coordinate);
-    coordinates.setType("Point");
-    tweet.setCoordinates(coordinates);
-    tweet.setText("this is for test");
-    postOne = twitterDao.create(tweet);
+    Coordinates coordinates = new Coordinates();
+    coordinates.setCoordinates(new double[] {lon,lat});
+    postTweet.setCoordinates(coordinates);
+    newTweet = twitterDao.create(postTweet);
   }
 
 
   @After
   public void tearDown() throws Exception {
-    Tweet findOne = twitterDao.deleteById(postOne.getId_str());
-    assertEquals(findOne.getText(),"this is for test");
-    assertEquals(findOne.getCoordinates().getCoordinates()[0], -122.42284884,0);
-    assertEquals(findOne.getCoordinates().getCoordinates()[1], 46.45645645,0);
+    Tweet findOne = twitterDao.deleteById(newTweet.getId_str());
+    assertEquals(newTweet.getText(),findOne.getText());
+    assertEquals(newTweet.getCoordinates().getCoordinates()[0], findOne.getCoordinates().getCoordinates()[0],0);
+    assertEquals(newTweet.getCoordinates().getCoordinates()[1],  findOne.getCoordinates().getCoordinates()[1],0);
+
+
   }
 
   @Test
   public void create() throws Exception {
-    assertEquals(postOne.getText(),"this is for test");
-    assertEquals(postOne.getCoordinates().getCoordinates()[0], -122.42284884,0);
-    assertEquals(postOne.getCoordinates().getCoordinates()[1], 46.45645645,0);
+    String hashTag = "#abc";
+    String text = "somtext " + hashTag + " " + System.currentTimeMillis();
+    Double lat = 1d;
+    Double lon = -1d;
+    Tweet postTweet = new Tweet();
+    postTweet.setText(text);
+
+    Coordinates coordinates = new Coordinates();
+    coordinates.setCoordinates(new double[] {lon,lat});
+    postTweet.setCoordinates(coordinates);
+    Tweet tweet = twitterDao.create(postTweet);
+    assertEquals(text,tweet.getText());
+    assertNotNull(tweet.getCoordinates());
+    assertEquals(2,tweet.getCoordinates().getCoordinates().length);
+    assertEquals(lon,tweet.getCoordinates().getCoordinates()[0],0);
+    assertEquals(lat,tweet.getCoordinates().getCoordinates()[1],0);
+    assertTrue(hashTag.contains(tweet.getEntities().getHashtags()[0].getText()));
+    twitterDao.deleteById(tweet.getId_str());
   }
 
 
 
   @Test
   public void findById() throws Exception {
-    Tweet findOne = twitterDao.findById(postOne.getId_str());
-    assertEquals(postOne.getText(),findOne.getText());
-    assertEquals(postOne.getCoordinates().getCoordinates()[0], findOne.getCoordinates().getCoordinates()[0],0);
-    assertEquals(postOne.getCoordinates().getCoordinates()[1],  findOne.getCoordinates().getCoordinates()[1],0);
+    Tweet findOne = twitterDao.findById(newTweet.getId_str());
+    assertEquals(newTweet.getText(),findOne.getText());
+    assertEquals(newTweet.getCoordinates().getCoordinates()[0], findOne.getCoordinates().getCoordinates()[0],0);
+    assertEquals(newTweet.getCoordinates().getCoordinates()[1],  findOne.getCoordinates().getCoordinates()[1],0);
   }
 
 
