@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CustomerDAO extends DataAccessObject<Customer> {
     private static final String INSERT = "INSERT INTO customer (first_name, last_name, " +
@@ -22,6 +24,7 @@ public class CustomerDAO extends DataAccessObject<Customer> {
     public CustomerDAO(Connection connection) {
         super(connection);
     }
+    static final Logger logger = LoggerFactory.getLogger(CustomerDAO.class);
 
     @Override
     public Customer findById(long id) {
@@ -41,7 +44,7 @@ public class CustomerDAO extends DataAccessObject<Customer> {
             }
 
         }catch(SQLException e) {
-            e.printStackTrace();
+            logger.error("can not proceed find by Id solution");
             throw new RuntimeException(e);
         }
         return customer;
@@ -68,7 +71,7 @@ public class CustomerDAO extends DataAccessObject<Customer> {
             statement.execute();
             customer = this.findById(dto.getId());
         }catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("update failed");
             throw new RuntimeException(e);
         }
 
@@ -90,7 +93,7 @@ public class CustomerDAO extends DataAccessObject<Customer> {
             int id = this.getLastVal(CUSTOMER_SEQUENCE);
             return this.findById(id);
         }catch(SQLException e){
-            e.printStackTrace();
+            logger.error("can not create the customer object");
             throw new RuntimeException(e);
         }
     }
@@ -101,7 +104,7 @@ public class CustomerDAO extends DataAccessObject<Customer> {
             statement.setLong(1,id);
             statement.execute();
         }catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("can not proceed the deleting operation.");
             throw new RuntimeException(e);
         }
     }

@@ -10,8 +10,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class OrderDAO extends DataAccessObject<Order> {
+    static final Logger logger = LoggerFactory.getLogger(OrderDAO.class);
     private static final String GET_ONE = "SELECT\n" +
             "  c.first_name, c.last_name, c.email, o.order_id,\n" +
             "  o.creation_date, o.total_due, o.status,\n" +
@@ -62,7 +65,7 @@ public class OrderDAO extends DataAccessObject<Order> {
             }
             order.setOrderLines(orderLines);
         }catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("can not create the order line");
             throw new RuntimeException("can not execute the query", e);
         }
         return order;
