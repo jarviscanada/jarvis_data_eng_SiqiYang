@@ -17,7 +17,7 @@ import org.junit.Test;
 /**
  * Created by melo45 on 2020-06-30.
  */
-public class TwitterDaoTest {
+public class TwitterDaoIntTest {
   TwitterDao twitterDao;
   Tweet newTweet;
   @Before
