@@ -17,9 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.apache.http.util.EntityUtils;
 
 
-/**
- * Created by melo45 on 2020-06-30.
- */
+
 public class TwitterDao implements CrdDao<Tweet,String>{
 
   //URI constants
@@ -46,7 +44,13 @@ public class TwitterDao implements CrdDao<Tweet,String>{
   }
 
 
+
   @Override
+  /**
+   * Create an entity(Tweet) to the underlying storage
+   * @param entity entity that to be created
+   * @return created entity
+   */
   public Tweet create(Tweet tweet) {
     URI uri = null;
     try {
@@ -60,6 +64,11 @@ public class TwitterDao implements CrdDao<Tweet,String>{
   }
 
   @Override
+  /**
+   * Find an entity(Tweet) by its id
+   * @param id entity id
+   * @return Tweet entity
+   */
   public Tweet findById(String o) {
     URI uri = null;
     try {
@@ -73,6 +82,11 @@ public class TwitterDao implements CrdDao<Tweet,String>{
   }
 
   @Override
+  /**
+   * Delete an entity(Tweet) by its ID
+   * @param id of the entity to be deleted
+   * @return deleted entity
+   */
   public Tweet deleteById(String o) {
     URI uri = null;
     try {
@@ -85,6 +99,13 @@ public class TwitterDao implements CrdDao<Tweet,String>{
     return returnTweet;
   }
 
+  /**
+   * this method is to generate the uri for the given http method
+   * @param method the method we passed in
+   * @param o is the object setting we need to pass.
+   * @return the uri we create for it.
+   * @throws URISyntaxException
+   */
   public URI generateUri(String method,Object o) throws URISyntaxException {
     String uri;
     URI answerUri;
