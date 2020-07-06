@@ -31,8 +31,7 @@ Delete tweet usage:
 java -jar twitter-1.0-SNAPSHOT.jar delete [id_1,id_2...]
 ```
 # Design
-- UML diagram
-- explain each component(app/main, controller, service, DAO) (30-50 words each)
+![](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/blob/develop/core_java/twitter/asset/UML.png)
 
 # Spring
 - How you managed the dependencies using Spring?
