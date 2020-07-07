@@ -145,8 +145,8 @@ public class TwitterDao implements CrdDao<Tweet,String>{
         logger.info(EntityUtils.toString(httpResponse.getEntity()));
       } catch (IOException e) {
         logger.error("there is no entity for this response",e);
+        throw new RuntimeException("http response status code invalid");
       }
-      throw new RuntimeException("http response status code invalid");
     }
     if (httpResponse.getEntity() == null) {
       throw new RuntimeException("http response's entity is empty");
