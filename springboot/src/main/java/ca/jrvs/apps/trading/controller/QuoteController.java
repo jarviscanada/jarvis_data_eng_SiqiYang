@@ -13,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -39,6 +40,17 @@ public class QuoteController {
     }catch (Exception e) {
       throw ResponseExceptionUtil.getResponseStatusException(e);
     }
+  }
+
+  @PutMapping(path = "/iexMarketData")
+  @ResponseStatus(HttpStatus.OK)
+  public void updateMarketDate() {
+    try{
+      quoteService.updateMarketData();
+    }catch (Exception e) {
+      throw ResponseExceptionUtil.getResponseStatusException(e);
+    }
+
   }
 
 }

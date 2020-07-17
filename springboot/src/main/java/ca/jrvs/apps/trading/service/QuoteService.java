@@ -3,6 +3,11 @@ package ca.jrvs.apps.trading.service;
 import ca.jrvs.apps.trading.dao.MarketDataDao;
 import ca.jrvs.apps.trading.dao.QuoteDao;
 import ca.jrvs.apps.trading.model.domain.IexQuote;
+import ca.jrvs.apps.trading.model.domain.Quote;
+import com.sun.org.apache.xpath.internal.operations.Quo;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import org.slf4j.Logger;
 import javax.transaction.Transactional;
 import org.slf4j.LoggerFactory;
@@ -13,13 +18,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class QuoteService {
   private static final Logger logger = LoggerFactory.getLogger(QuoteService.class);
-//  private QuoteDao quoteDao;
+  private QuoteDao quoteDao;
   private MarketDataDao marketDataDao;
 
   @Autowired
-  public QuoteService(MarketDataDao marketDataDao) {
+  public QuoteService(QuoteDao quoteDao,MarketDataDao marketDataDao) {
     this.marketDataDao = marketDataDao;
-//    this.quoteDao = quoteDao;
+    this.quoteDao = quoteDao;
   }
 
   public IexQuote findIexQuoteByTicker(String ticker) {
@@ -27,7 +32,50 @@ public class QuoteService {
         .orElseThrow(()-> new IllegalArgumentException(ticker+ "is invalid"));
   }
 
+  public void updateMarketData() {
+    Iterable<Quote> quotes =  quoteDao.findAll();
+    quotes.forEach(element -> quoteDao.save(buildQuoteFromIexquote(marketDataDao.findById(element.getTicker()).get())));
+  }
 
+
+  protected static Quote buildQuoteFromIexquote(IexQuote Iexquote) {
+    Quote quote = new Quote();
+    if (Iexquote.getLatestPrice() == null) {
+      quote.setLastPrice(0d);
+      quote.setBidSize(0);
+      quote.setAskPrice(0d);
+      quote.setAskSize(0);
+      quote.setAskPrice(0d);
+    }else {
+      quote.setTicker(Iexquote.getSymbol());
+      quote.setAskPrice(Iexquote.getIexAskPrice());
+      quote.setAskSize(Iexquote.getIexAskSize().intValue());
+      quote.setBidSize(Iexquote.getIexBidSize().intValue());
+      quote.setBidPrice(Iexquote.getIexBidPrice());
+      quote.setLastPrice(Iexquote.getLatestPrice());
+    }
+    return quote;
+  }
+
+  public List<Quote> saveQuotes(List<String> tickers) {
+    List quotes = new ArrayList<Quote>();
+    tickers.forEach(elements -> quotes.add(saveQuote(elements)));
+    return quotes;
+  }
+
+
+  public Quote saveQuote(String ticker) {
+    Quote quote = quoteDao.save(buildQuoteFromIexquote(marketDataDao.findById(ticker).get()));
+    return quote;
+  }
+
+  public Quote saveQuote(Quote quote) {
+    return quoteDao.save(quote);
+  }
+
+  public List<Quote> findAllQuotes() {
+    return (List<Quote>) quoteDao.findAll();
+  }
 
 
 }

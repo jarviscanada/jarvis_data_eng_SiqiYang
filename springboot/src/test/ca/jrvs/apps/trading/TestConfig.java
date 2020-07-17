@@ -1,21 +1,27 @@
 package ca.jrvs.apps.trading;
 
 
+import ca.jrvs.apps.trading.dao.MarketDataDao;
 import ca.jrvs.apps.trading.model.config.MarketDataConfig;
-import java.util.concurrent.ThreadPoolExecutor.AbortPolicy;
 import javax.sql.DataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
 
-
 @Configuration
-public class AppConfig {
-  private Logger logger = LoggerFactory.getLogger(AppConfig.class);
+@ComponentScan(basePackages={"ca.jrvs.apps.trading.dao","ca.jrvs.apps.trading.service"})
+public class TestConfig {
+  @Bean
+  public MarketDataConfig marketDataConfig() {
+    MarketDataConfig marketDataConfig = new MarketDataConfig();
+    marketDataConfig.setHost("https://cloud.iexapis.com/v1/");
+    marketDataConfig.setToken(System.getenv("IEX_PUB_TOKEN"));
+    return marketDataConfig;
+  }
 
   @Bean
   DataSource dataSource() {
@@ -28,20 +34,13 @@ public class AppConfig {
     basicDataSource.setPassword(password);
     return basicDataSource;
   }
-  @Bean
-  public MarketDataConfig marketDataConfig() {
-   MarketDataConfig marketDataConfig = new MarketDataConfig();
-   marketDataConfig.setToken(System.getenv("IEX_PUB_TOKEN"));
-   marketDataConfig.setHost("https://cloud.iexapis.com/v1/");
-   return marketDataConfig;
-  }
 
   @Bean
   public HttpClientConnectionManager httpClientConnectionManager() {
-    PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager();
-    cm.setMaxTotal(50);
-    cm.setDefaultMaxPerRoute(50);
-    return cm;
+    PoolingHttpClientConnectionManager pm = new PoolingHttpClientConnectionManager();
+    pm.setMaxTotal(50);
+    pm.setDefaultMaxPerRoute(50);
+    return pm;
   }
 
 }

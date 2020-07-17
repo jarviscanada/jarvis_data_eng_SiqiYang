@@ -1,13 +1,14 @@
-package test;
+package ca.jrvs.apps.trading.dao;
 
-import static org.junit.Assert.*;
 
-import ca.jrvs.apps.trading.dao.MarketDataDao;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
 import ca.jrvs.apps.trading.model.config.MarketDataConfig;
 import ca.jrvs.apps.trading.model.domain.IexQuote;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Queue;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,8 +32,8 @@ public class MarketDataDaoTest {
     assertEquals("AAPL",quoteList.get(1).getSymbol());
 
     try{
-     dao.findAllById(Arrays.asList("FB2","AAPL"));
-     fail();
+      dao.findAllById(Arrays.asList("FB2","AAPL"));
+      fail();
     }catch(IllegalArgumentException e) {
       assertTrue(true);
     }
