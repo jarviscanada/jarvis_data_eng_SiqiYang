@@ -2,6 +2,7 @@ package ca.jrvs.apps.trading;
 
 
 import ca.jrvs.apps.trading.service.QuoteService;
+import ca.jrvs.apps.trading.service.TradeAccountService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,8 @@ public class Application implements CommandLineRunner{
 
   @Autowired
   private QuoteService quoteService;
+  @Autowired
+  TradeAccountService tradeAccountService;
 
   public static void main(String[] args) throws Exception{
     SpringApplication app = new SpringApplication(Application.class);

@@ -40,12 +40,13 @@ public class QuoteService {
 
   protected static Quote buildQuoteFromIexquote(IexQuote Iexquote) {
     Quote quote = new Quote();
-    if (Iexquote.getLatestPrice() == null) {
-      quote.setLastPrice(0d);
+    if (Iexquote.getIsUSMarketOpen() == false) {
+      quote.setLastPrice(Iexquote.getLatestPrice());
       quote.setBidSize(0);
-      quote.setAskPrice(0d);
+      quote.setBidPrice(0d);
       quote.setAskSize(0);
       quote.setAskPrice(0d);
+      quote.setTicker(Iexquote.getSymbol());
     }else {
       quote.setTicker(Iexquote.getSymbol());
       quote.setAskPrice(Iexquote.getIexAskPrice());
