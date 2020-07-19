@@ -8,7 +8,7 @@ public class SecurityOrder implements Entity<Integer>{
   private String status;
   private String ticker;
   private Integer size;
-  private Integer price;
+  private Double price;
   private String notes;
 
   public Integer getAccount_id() {
@@ -55,11 +55,11 @@ public class SecurityOrder implements Entity<Integer>{
     this.size = size;
   }
 
-  public Integer getPrice() {
+  public Double getPrice() {
     return price;
   }
 
-  public void setPrice(Integer price) {
+  public void setPrice(Double price) {
     this.price = price;
   }
 

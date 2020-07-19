@@ -60,7 +60,7 @@ public class SecurityOrderDaoTest {
 
     securityOrder = new SecurityOrder();
     securityOrder.setNotes("asdasd");
-    securityOrder.setPrice(123);
+    securityOrder.setPrice(123d);
     securityOrder.setSize(123);
     securityOrder.setStatus("open");
     securityOrder.setTicker(quote.getTicker());

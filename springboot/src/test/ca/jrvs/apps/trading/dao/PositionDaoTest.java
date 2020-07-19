@@ -72,7 +72,7 @@ public class PositionDaoTest {
 
     securityOrder = new SecurityOrder();
     securityOrder.setNotes("asdasd");
-    securityOrder.setPrice(123);
+    securityOrder.setPrice(123d);
     securityOrder.setSize(123);
     securityOrder.setStatus("FILLED");
     securityOrder.setTicker(quote.getTicker());
@@ -104,7 +104,7 @@ public class PositionDaoTest {
 
     securityOrder_two = new SecurityOrder();
     securityOrder_two.setNotes("asdasd");
-    securityOrder_two.setPrice(123);
+    securityOrder_two.setPrice(123d);
     securityOrder_two.setSize(124);
     securityOrder_two.setStatus("FILLED");
     securityOrder_two.setTicker(quote.getTicker());
@@ -154,9 +154,9 @@ public class PositionDaoTest {
 
   @After
   public void tearDown() throws Exception {
-//    securityOrderDao.deleteAll();
-//    quoteDao.deleteAll();
-//    accountDao.deleteAll();
-//    traderDao.deleteAll();
+    securityOrderDao.deleteAll();
+    quoteDao.deleteAll();
+    accountDao.deleteAll();
+    traderDao.deleteAll();
 }
 }
