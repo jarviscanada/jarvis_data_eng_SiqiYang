@@ -81,6 +81,7 @@ public class TraderAccountController {
   @ApiResponses(value = {@ApiResponse(code = 400, message = "unable to delete the user")})
   @DeleteMapping(path = "/traderId/{traderId}")
   @ResponseStatus(HttpStatus.OK)
+  @ResponseBody
   public void deleteTrader(@PathVariable Integer traderId) {
     try{
       tradeAccountService.deleteTraderById(traderId);

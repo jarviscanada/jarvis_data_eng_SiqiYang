@@ -8,7 +8,7 @@
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
   <groupId>ca.jrvs.apps</groupId>
-  <artifactId>springboot</artifactId>
+  <artifactId>trading</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <properties>
