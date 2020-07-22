@@ -60,7 +60,7 @@ Front-end developers can utilize this REST API and combine it with the front-end
   # you should see two running docker containers
   docker container ls
   ```
-- After the above steps, we can using Swagger UI to verify the application.
+- After the above steps, we can use Swagger UI to verify the application.
 The URL for the application is [http://localhost:8080/swagger-ui.html#/](http://localhost:8080/swagger-ui.html#/.).
 ![](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/blob/develop/springboot/assets/SwaggerUI.png).
 
@@ -69,14 +69,11 @@ The URL for the application is [http://localhost:8080/swagger-ui.html#/](http://
 ##### Controller layer:
 It handles the user input maps the corresponding request path and call the service layer to handle later operations.
 ##### Service layer:
-It handles the bushiness logic and validate the inputs that are passed from controller layers. It invokes the error handling as well as the exception
- then call the DAO layer to perform the actually data manipulation.
+It handles the business logic and validates the inputs that are passed from controller layers. It invokes the error handling as well as the exception then calls the DAO layer to perform the actual data manipulation.
 ##### DAO layer:
-It serves for the service layer and performs the actual data manipulation. It retrieves data from the IEX cloud and 
- store any changed data to the PSQL.
+It serves for the service layer and performs the actual data manipulation. It retrieves data from the IEX cloud and stores any changed data to the PSQL.
 ##### SpringBoot:
-SpringBoot provides the Inversion of control principle to the whole project. It helps to manage the dependencies between each 
-components. Meanwhile it uses the embedded WebServlet/Tomcat to help us manage and map the entry point for the application.
+SpringBoot provides the Inversion of control principle to the whole project. It helps to manage the dependencies between each component. Meanwhile, it uses the embedded WebServlet/Tomcat to help us manage and map the entry point for the application.
 ##### PSQL and IEX:
 PSQL provides the data storage platform to store the data. IEX cloud is used to retrieve and update the real market data.
 
@@ -101,7 +98,7 @@ IEX quote object, create quote objects for the PSQL data , update the quote in P
   - POST `/trader/firstname/{firstname}/lastname/{lastname}/dob/{dob}/country/{country}/email/{email}`: create a trader and it's account with the given information.
 ## Order Controller
 - It submits a security order into the trading system with the given market order object.
-  -POST `/order/marketOrder`: create a security order with the given market order object into trading system's PSQL database.
+  - POST `/order/marketOrder`: create a security order with the given market order object into trading system's PSQL database.
 
 ## Dashboard controller
 - It generates the trader profile and specification by using the trader's ID.
@@ -116,7 +113,7 @@ IEX quote object, create quote objects for the PSQL data , update the quote in P
  build it and clean the package. Then we copy the .jar file to the corresponding path and run with this jar file.
 
 # Improvements
-- We can build a front-end application to consume this back-end api.
+- We can build a front-end application to consume this back-end API.
 - Add authentication feature for each withdraw/deposit operation.
 - Let quotes in the PSQL database automatically update and consist with the real data in IEX cloud.
 - Let quote to store more information.
