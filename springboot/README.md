@@ -1,9 +1,8 @@
-Table of contents
 * [Introduction](#Introduction)
-* [Quick Start](#Quick Start)
+* [Quick Start](#Quick_Start)
 * [Architecture](#Architecture)
-* [REST API Usage](#REST API Usage)
-* [Docker Deployment](#Docker Deployment)
+* [REST API Usage](#REST_API_Usage)
+* [Docker Deployment](#Docker_Deployment)
 * [Improvements](#Improvements)
 
 # Introduction
@@ -76,7 +75,7 @@ It serves for the service layer and performs the actual data manipulation. It re
 SpringBoot provides the Inversion of control principle to the whole project. It helps to manage the dependencies between each component. Meanwhile, it uses the embedded WebServlet/Tomcat to help us manage and map the entry point for the application.
 ##### PSQL and IEX:
 PSQL provides the data storage platform to store the data. IEX cloud is used to retrieve and update the real market data.
-
+``
 
 # REST API Usage
 ## Swagger
