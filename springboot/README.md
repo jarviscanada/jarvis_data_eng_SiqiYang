@@ -116,7 +116,6 @@ IEX quote object, create quote objects for the PSQL data , update the quote in P
  build it and clean the package. Then we copy the .jar file to the corresponding path and run with this jar file.
 
 # Improvements
-If you have more time, what would you improve?
 - We can build a front-end application to consume this back-end api.
 - Add authentication feature for each withdraw/deposit operation.
 - Let quotes in the PSQL database automatically update and consist with the real data in IEX cloud.
