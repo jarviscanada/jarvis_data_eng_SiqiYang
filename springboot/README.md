@@ -20,12 +20,12 @@ Front-end developers can utilize this REST API and combine it with the front-end
 - Docker scritps with description
 	- build PSQL image
 	```
-	 cd ./springboot/psql
+	cd ./springboot/psql
   docker build -t trading-psl.
 	```
 	- build trading-app image
 	```
-	 cd ./springboot/
+	cd ./springboot/
   docker build -t trading-app .
 	```
   - create docker network
