@@ -1,8 +1,8 @@
 * [Introduction](#Introduction)
-* [Quick Start](#Quick_Start)
+* [Quick Start](#QuickStart)
 * [Architecture](#Architecture)
-* [REST API Usage](#REST_API_Usage)
-* [Docker Deployment](#Docker_Deployment)
+* [REST API Usage](#RESTAPIUsage)
+* [Docker Deployment](#DockerDeployment)
 * [Improvements](#Improvements)
 
 # Introduction
