@@ -62,42 +62,63 @@ Front-end developers can utilize this REST API and combine it with the front-end
   ```
 - After the above steps, we can using Swagger UI to verify the application.
 The URL for the application is [http://localhost:8080/swagger-ui.html#/](http://localhost:8080/swagger-ui.html#/.).
-![](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/blob/develop/core_java/twitter/asset/UML.png)
+![](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/blob/develop/springboot/assets/SwaggerUI.png).
 
 # Architecture
-- Draw a component diagram which contains controllers, services, DAOs, psql, IEX Cloud, WebServlet/Tomcat, HTTP client, and SpringBoot. 
-- briefly explain the following components and services (3-5 sentences for each)
-  - Controller layer (e.g. handles user requests....)
-  - Service layer
-  - DAO layer
-  - SpringBoot: webservlet/TomCat and IoC
-  - PSQL and IEX
+- ![](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/blob/develop/springboot/assets/structure.png).
+##### Controller layer:
+It handles the user input maps the corresponding request path and call the service layer to handle later operations.
+##### Service layer:
+It handles the bushiness logic and validate the inputs that are passed from controller layers. It invokes the error handling as well as the exception
+ then call the DAO layer to perform the actually data manipulation.
+##### DAO layer:
+It serves for the service layer and performs the actual data manipulation. It retrieves data from the IEX cloud and 
+ store any changed data to the PSQL.
+##### SpringBoot:
+SpringBoot provides the Inversion of control principle to the whole project. It helps to manage the dependencies between each 
+components. Meanwhile it uses the embedded WebServlet/Tomcat to help us manage and map the entry point for the application.
+##### PSQL and IEX:
+PSQL provides the data storage platform to store the data. IEX cloud is used to retrieve and update the real market data.
+
 
 # REST API Usage
 ## Swagger
-What's swagger (1-2 sentences, you can copy from swagger docs). Why are we using it or who will benefit from it?
+The Swagger UI is an open source project to visually render documentation for an API defined with the OpenAPI (Swagger) Specification. Swagger UI lets we visualize and interact with the API’s resources without having any of the implementation logic in place, making it easy for back end implementation and client side consumption.
 ## Quote Controller
-- High-level description for this controller. Where is market data coming from (IEX) and how did you cache the quote data (PSQL). Briefly talk about data from within your app
-- briefly explain each endpoint
-  e.g.
-  - GET `/quote/dailyList`: list all securities that are available to trading in this trading system blah..blah..
+- It accepts the user input and perform the actions such as retrieves data from IEX cloud and stores it as 
+IEX quote object, create quote objects for the PSQL data , update the quote in PSQL database.
+  - GET `/quote/dailyList`: list all securities that are available to trading in this trading system.
+  - PUT `/quote/iexMarketData`: update all the quote in the database and synchronize the data with IEX cloud statistic.
+  - PUT `/quote`: save the quote into the trading system.
+  - POST `/quote/tickerId/{tickerId}`: save the quote with the given ticker into the trading system.
+  - GET `/quote/iex/ticker/{ticker}`: show the specific quote's details with the give ticker in IEX cloud.
 ## Trader Controller
-- High-level description for trader controller (e.g. it can manage trader and account information. it can deposit and withdraw fund from a given account)
-- briefly explain each endpoint
-##Order Controller
-- High-level description for this controller.
-- briefly explain each endpoint
-## App controller
-- briefly explain each endpoint
-## Optional(Dashboard controller)
-- High-level description for this controller.
-- briefly explain each endpoint
+- It manages the trader and it's account in the trading system. Such as creates a new trader, add fund or deposit fund into specific trader's account.
+  - PUT `/trader/withdraw/traderId/{traderId}/amount/{amount}`: withdraw certain amount of fund from the trader's account.
+  - PUT `/trader/deposit/traderId/{traderId}/amount/{amount}`: deposit certain amount of fund into trader's account.
+  - DELETE `/trader/traderId/{traderId}`: delete a trader and it's account when it's fund is zero and no open position.
+  - POST `/trader`: create a trader and a account with a given trader object given in the request body.
+  - POST `/trader/firstname/{firstname}/lastname/{lastname}/dob/{dob}/country/{country}/email/{email}`: create a trader and it's account with the given information.
+## Order Controller
+- It submits a security order into the trading system with the given market order object.
+  -POST `/order/marketOrder`: create a security order with the given market order object into trading system's PSQL database.
+
+## Dashboard controller
+- It generates the trader profile and specification by using the trader's ID.
+  - GET `/dashboard/profile/traderId/{traderId}`: show the trader profile by it's ID.
+  - GET `/dashboard/portfolio/traderId/{traderId}`: show the trader portfolio by it's ID.
 
 # Docker Deployment
-- docker diagram including images, containers, network, and docker hub
-e.g. https://www.notion.so/jarviscanada/Dockerize-Trading-App-fc8c8f4167ad46089099fd0d31e3855d#6f8912f9438e4e61b91fe57f8ef896e0
-- describe each image in details (e.g. how psql initialize tables)
+![](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/blob/develop/springboot/assets/docker.png).
+ - For the trading PSQL image, we build it base on the official Postgres docker image `postgres:9.6-alpine`.
+  We copy the two sql files to the `/docker-entrypoint-initdb.d/` and these two sql files help us to initialize the database and tables in that database.
+ - For the trading-app image, we build it base on the `openjdk:8-alpine` and `maven:3.6-jdk-8-slim` official images. In the Dockerfile, we copy the pom.xml and src files to the corresponding folder then let maven to 
+ build it and clean the package. Then we copy the .jar file to the corresponding path and run with this jar file.
 
 # Improvements
 If you have more time, what would you improve?
-- at least 5 improvements
+- We can build a front-end application to consume this back-end api.
+- Add authentication feature for each withdraw/deposit operation.
+- Let quotes in the PSQL database automatically update and consist with the real data in IEX cloud.
+- Let quote to store more information.
+- Allow one trader having multiple accounts.
