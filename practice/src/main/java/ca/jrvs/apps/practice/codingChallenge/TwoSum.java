@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by melo45 on 2020-06-29.
+ * https://www.notion.so/Two-Sum-7f36fa8ee3474109beaba553d3b0a543
  */
 public class TwoSum {
 
