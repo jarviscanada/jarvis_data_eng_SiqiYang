@@ -16,9 +16,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_SiqiYang](
 
 - **[Cluster Monitor](./linux_sql)**:Developed an internal tool that monitors the cluster resources such as hardware information, and some usage data every one minute for each network node that is connected by a switch.Used two bash-scripts to collect the information from each host and store the data in the Database.Utilized the docker container to provision the database.
 - **[Core Java Apps](./core_java)**: Developed three Java projects. The first one is about simulating the grep command functionality using Java. It uses the lambda function and stream API from Java to optimize the final project performance. Then the second one is the JDBC application, It uses JDBC to build a connection between Java and Postgres SQL database. It implements CRUD(create, read, update, delete) operations by using the Data Access Object(DAO) design pattern. The third project is about using Twitter REST API to create a Java application. This Java application allows users to create, delete, and find a specific tweet. It uses MVC(Model–view–controller) design pattern to manage the code structure and Spring framework to manage the dependency relationship.
-- **[SpringBoot App](./springboot)**: Not started
+- **[SpringBoot App](./springboot)**: Developed an online stock trading simulation REST API that supports CRUD operations on trader, account, security orders, and quotes. Front-end developers can utilize this REST API and combine it with the front-end application to achieve a complete online stock trading simulate application for various platforms. The application can be consumed by using Swagger UI or postman. This application is a microservice which is implemented by Java along with SpringBoot. It utilizes the MVC design pattern and Three-Tier architecture to manage the overall code structure. It retrieves real market data by using IEX cloud API and stores the market data into the PostgreSQL database to persist the data. It also makes use of the Mockito framework and integration test to ensure it's quality.
 - **[Cloud & DevOps](./cloud_devops)**: Not started
-- **[Hadoop](./hadoop)**: Not started
+- **[Hadoop](./hadoop)**: In progress
 - **[Spark/Scala](./spark)**:  Not started
 
 ## Professional Experiences
