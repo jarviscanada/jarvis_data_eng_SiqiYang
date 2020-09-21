@@ -92,4 +92,11 @@ public class QuoteController {
     }
   }
 
+  @GetMapping(path = "/healthPoint")
+  @ResponseStatus(HttpStatus.OK)
+  @ResponseBody
+  public String health() {
+      return "check, Im healthy !";
+  }
+
 }
