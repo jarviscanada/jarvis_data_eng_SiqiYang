@@ -18,6 +18,6 @@ public class AppController {
   @ResponseBody
   @GetMapping(path = "/health")
   public String health() {
-    return "I'm very very healthy and happy !!!!!!!:)";
+    return "I'm very very healthy and happy !!!!!!! hahahah:)";
   }
 }
