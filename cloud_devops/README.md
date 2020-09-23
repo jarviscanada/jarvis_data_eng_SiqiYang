@@ -5,12 +5,14 @@ create the automated deployment process for the trading application. The trading
 
 # Application Cloud Architecture
 ![](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/blob/develop/cloud_devops/draw_io/cloud.png).
+
 The load balancer is used to handle the large incoming traffic. It will distribute the incoming request to the existing EC2 instance and make sure all the EC2 instance in the current auto-scaling group has the balance. Also, It sends the health
 request to each of the EC2 instances and make sure not forwarding the further request to the unhealthy EC2 instance.
 The auto-scaling group is used to make sure the elastic of the application, it will cooperate with the load balancer and scale in and out the instance.
 
 # Deployment Environments
 ![](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/blob/develop/cloud_devops/draw_io/elastic.png).
+
 Elastic Beanstalk is used to simplify the deployment process. By using Elastic beanstalk, there are two environments created. 
 The development environment and production environment. 
 The development environment represents the under development version and the production environment represents the production-ready version of the application.
