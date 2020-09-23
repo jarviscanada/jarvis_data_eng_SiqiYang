@@ -28,6 +28,6 @@ from GitHub and then Jenkins uses the source code to build the application and p
 
 
 # Improvements
-1.Let the security group rules more strict.
-2.Add more environments such as some feature environments.
-3.Test more larger traffic to make sure the load balancer's performance.
+1. Let the security group rules more strict.
+2. Add more environments such as some feature environments.
+3. Test more larger traffic to make sure the load balancer's performance.
