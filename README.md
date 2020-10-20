@@ -6,7 +6,7 @@ I recently graduated from the University of Toronto St. George with a Specialist
 
 **Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, JavaScript, React, Hadoop, HTML, SpringBoot, AWS, Jenkins
 
-**Competent:** C, Node.js, Docker, MS Office, CSS
+**Competent:** Jupyter notebook, Pandas, Numpy, C, Node.js, Docker, MS Office, CSS
 
 **Familiar:** Angular, MATLAB, Verilog, Python, Postman
 
@@ -30,6 +30,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_SiqiYang](
 **Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/tree/master/spark)]: Not started
 
 **Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/tree/master/cloud_devops)]: Used the previously developed trading application and migrate it to the AWS platform. Also used Jenkins to create the automated deployment process for the trading application. The trading application uses Three-Tier Architecture as it's overall structure. It divides the whole application into the client tier, application tier, and database tier. In this cloud-DevOps project, it uses EC2 instance to handle the application tier. It makes use of the RDS database as the database tier to persist the data. Also, It utilizes the load balancer to distribute the income traffic and uses the auto-scaling group to ensure the scalability. In addition, Elastic beanstalk is used to simplify the deployment process and provide different environments. Furthermore, Jenkins is used to creating the CI/CD pipeline. Jenkins pulls the new version from GitHub, builds, and deploys the Elastic beanstalk application.
+
+**python_data_wrangling** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/tree/master/python_data_wrangling)]: Used several technologies to provide a proof of concept for the LGS IT team. LGS IT team provided the transaction data from between 01/12/2009 and 09/12/2011 into a SQL file as the sample data set. Created a SQL data warehouse and loaded the SQL file for the OLAP purpose. Utilized Python, Jupyter Notebook, Pandas Dataframe, and Numpy for this PoC project and analytic purpose.
 
 
 ## Highlighted Projects
