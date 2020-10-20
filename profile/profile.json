@@ -38,7 +38,7 @@
     {
       "description": [
         "Twitter App: Implemented an application which uses Twitter REST API. This Java application allows users to create, delete, and find a specific tweet. It uses MVC(Model–view–controller) design pattern to manage the code structure and Spring framework to manage the dependency relationship.",
-        "JDBC App: Design an application which uses JDBC to build a connection between Java and Postgres SQL database. It implements CRUD(create, read, update, delete) operations by using the Data Access Object(DAO) design pattern. ",
+        "JDBC App: Designed an application which uses JDBC to build a connection between Java and Postgres SQL database. It implements CRUD(create, read, update, delete) operations by using the Data Access Object(DAO) design pattern. ",
         "Grep App: Simulated the grep command functionality using Java. It uses the lambda function and stream API from Java to optimize the final project performance. "
       ],
       "git_url": "/core_java",
@@ -60,7 +60,7 @@
       "name": "Spark"
     },
     {
-      "description": "In progress",
+      "description": "Used the previously developed trading application and migrate it to the AWS platform. Also used Jenkins to create the automated deployment process for the trading application. The trading application uses Three-Tier Architecture as it's overall structure. It divides the whole application into the client tier, application tier, and database tier. In this cloud-DevOps project, it uses EC2 instance to handle the application tier. It makes use of the RDS database as the database tier to persist the data. Also, It utilizes the load balancer to distribute the income traffic and uses the auto-scaling group to ensure the scalability. In addition, Elastic beanstalk is used to simplify the deployment process and provide different environments. Furthermore, Jenkins is used to creating the CI/CD pipeline. Jenkins pulls the new version from GitHub, builds, and deploys the Elastic beanstalk application.",
       "git_url": "/cloud_devops",
       "name": "Cloud/DevOps"
     }
@@ -108,8 +108,10 @@
       "React",
       "Hadoop",
       "HTML",
-      "SpringBoot"
+      "SpringBoot",
+      "AWS",
+      "Jenkins"
     ]
   },
-  "summary": "I recently graduated from the University of Toronto St. George with a Specialist in Computer Science and a minor in mathematics. Through 4 years' studies, I gained plenty of valuable experiences about computer science. During the University, I completed several front end and back end projects. These experiences helped me become a team-oriented, detail-oriented, responsible person. I'm passionate about learning new technology and always looking for new challenges. Currently, I am working for Jarvis company and mainly responsible for building several big data-related projects including Java, SQL, Springboot. Also, I'm responsible for performing the scrum methodology to ensure the success of the projects by fulfilling the requirements. During leisure, I enjoy playing basketball and team video games. It helps me develop solid communication skills and a team-oriented personality."
+  "summary": "I recently graduated from the University of Toronto St. George with a Specialist in Computer Science and a minor in mathematics. Through 4 years' studies, I gained plenty of valuable experiences in computer science. During the University, I completed several front ends and back end projects. These experiences helped me become a team-oriented, detail-oriented, and responsible person. I'm passionate about learning new technology and always looking for new challenges. Currently, I am working for Jarvis company and mainly responsible for building several big data-related projects including Java, SQL, Springboot, Hadoop, and Cloud DevOps. Also, I'm responsible for performing the scrum methodology to ensure the success of the projects by fulfilling the requirements. During leisure, I enjoy playing basketball and team video games. It helps me develop solid communication skills and a team-oriented personality."
 }
