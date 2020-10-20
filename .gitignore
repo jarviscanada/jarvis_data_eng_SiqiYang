@@ -6,4 +6,11 @@ target/
 *.logs
 *.iml
 .idea/
+.cache/
+.config/
+.ipynb_checkpoints/
+.ipython/
+.jupyter/
+.local/
+.npm/
 .eclipse
