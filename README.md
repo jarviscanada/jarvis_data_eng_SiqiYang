@@ -46,7 +46,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_SiqiYang](
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2020-present)**: Worked several Big Data related projects that include the Linux/Bash, Java, SpringBoot, Cloud develop, and Hadoop/Spark in an Agile team as a junior developer. Uitized the Agile/Scrum collaboration methodology, Git, and Git flow to ensure the success of the development process. Used Integration and Unit test techniques to ensure the quality of the final projects.
+**Software Developer, Jarvis (2020-present)**: Worked on several Big Data related projects that include the Linux/Bash, Java, SpringBoot, Cloud develop, and Hadoop/Spark in an Agile team as a junior developer. Uitized the Agile/Scrum collaboration methodology, Git, and Git flow to ensure the success of the development process. Used Integration and Unit test techniques to ensure the quality of the final projects.
 
 
 ## Education
