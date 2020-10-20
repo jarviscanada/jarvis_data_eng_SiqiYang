@@ -1,12 +1,12 @@
 # Siqi Yang . Jarvis Consulting
 
-I recently graduated from the University of Toronto St. George with a Specialist in Computer Science and a minor in mathematics. Through 4 years' studies, I gained plenty of valuable experiences about computer science. During the University, I completed several front end and back end projects. These experiences helped me become a team-oriented, detail-oriented, responsible person. I'm passionate about learning new technology and always looking for new challenges. Currently, I am working for Jarvis company and mainly responsible for building several big data-related projects including Java, SQL, Springboot. Also, I'm responsible for performing the scrum methodology to ensure the success of the projects by fulfilling the requirements. During leisure, I enjoy playing basketball and team video games. It helps me develop solid communication skills and a team-oriented personality.
+I recently graduated from the University of Toronto St. George with a Specialist in Computer Science and a minor in mathematics. Through 4 years' studies, I gained plenty of valuable experiences in computer science. During the University, I completed several front ends and back end projects. These experiences helped me become a team-oriented, detail-oriented, and responsible person. I'm passionate about learning new technology and always looking for new challenges. Currently, I am working for Jarvis company and mainly responsible for building several big data-related projects including Java, SQL, Springboot, Hadoop, and Cloud DevOps. Also, I'm responsible for performing the scrum methodology to ensure the success of the projects by fulfilling the requirements. During leisure, I enjoy playing basketball and team video games. It helps me develop solid communication skills and a team-oriented personality.
 
 ## Skills
 
-**Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, JavaScript, React, Hadoop, HTML, SpringBoot
+**Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, JavaScript, React, Hadoop, HTML, SpringBoot, AWS, Jenkins
 
-**Competent:** C, Node.js, Docker, MS Office, CSS
+**Competent:** Numpy, Jupyter notebook, Pandas, C, Node.js, Docker, MS Office, CSS
 
 **Familiar:** Angular, MATLAB, Verilog, Python, Postman
 
@@ -20,16 +20,18 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_SiqiYang](
 **Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/tree/master/core_java)]:
       
   - Twitter App: Implemented an application which uses Twitter REST API. This Java application allows users to create, delete, and find a specific tweet. It uses MVC(Model–view–controller) design pattern to manage the code structure and Spring framework to manage the dependency relationship.
-  - JDBC App: Design an application which uses JDBC to build a connection between Java and Postgres SQL database. It implements CRUD(create, read, update, delete) operations by using the Data Access Object(DAO) design pattern. 
+  - JDBC App: Designed an application which uses JDBC to build a connection between Java and Postgres SQL database. It implements CRUD(create, read, update, delete) operations by using the Data Access Object(DAO) design pattern. 
   - Grep App: Simulated the grep command functionality using Java. It uses the lambda function and stream API from Java to optimize the final project performance. 
 
 **Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/tree/master/springboot)]: Developed an online stock trading simulation REST API that supports CRUD operations on trader, account, security orders, and quotes. Front-end developers can utilize this REST API and combine it with the front-end application to achieve a complete online stock trading simulate application for various platforms. The application can be consumed by using Swagger UI or postman. This application is a microservice which is implemented by Java along with SpringBoot. It utilizes the MVC design pattern and Three-Tier architecture to manage the overall code structure. It retrieves real market data by using IEX cloud API and stores the market data into the PostgreSQL database to persist the data. It also makes use of the Mockito framework and integration test to ensure it's quality.
 
 **Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/tree/master/hadoop)]: Implemented a project which is mainly about helping data analytics team to process data using Apache Hadoop and evaluate different tools and components of Hadoop. It evaluated the main components of Hadoop including including MapReduce, HDFS, and YARN. The Hadoop cluster is provisioned by Google Cloud Platform. It solved some business problems by using Apache Hive and using Zeppelin Notebook as the web-based notebook to record the HiveQL queries and evaluate the output.
 
-**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/tree/master/spark)]: Not started
+**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/tree/master/spark)]: in progress
 
-**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/tree/master/cloud_devops)]: In progress
+**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/tree/master/cloud_devops)]: Used the previously developed trading application and migrate it to the AWS platform. Also used Jenkins to create the automated deployment process for the trading application. The trading application uses Three-Tier Architecture as it's overall structure. It divides the whole application into the client tier, application tier, and database tier. In this cloud-DevOps project, it uses EC2 instance to handle the application tier. It makes use of the RDS database as the database tier to persist the data. Also, It utilizes the load balancer to distribute the income traffic and uses the auto-scaling group to ensure the scalability. In addition, Elastic beanstalk is used to simplify the deployment process and provide different environments. Furthermore, Jenkins is used to creating the CI/CD pipeline. Jenkins pulls the new version from GitHub, builds, and deploys the Elastic beanstalk application.
+
+**python_data_wrangling** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_SiqiYang/tree/master/python_data_wrangling)]: Used several technologies to provide a proof of concept for the LGS IT team. LGS IT team provided the transaction data from between 01/12/2009 and 09/12/2011 into a SQL file as the sample data set. Created a SQL data warehouse and loaded the SQL file for the OLAP purpose. Utilized Python, Jupyter Notebook, Pandas Dataframe, and Numpy for this PoC project and analytic purpose.
 
 
 ## Highlighted Projects

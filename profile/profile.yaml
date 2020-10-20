@@ -5,7 +5,7 @@ github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_SiqiYang
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: I recently graduated from the University of Toronto St. George with a Specialist in Computer Science and a minor in mathematics. Through 4 years' studies, I gained plenty of valuable experiences about computer science. During the University, I completed several front end and back end projects. These experiences helped me become a team-oriented, detail-oriented, responsible person. I'm passionate about learning new technology and always looking for new challenges. Currently, I am working for Jarvis company and mainly responsible for building several big data-related projects including Java, SQL, Springboot. Also, I'm responsible for performing the scrum methodology to ensure the success of the projects by fulfilling the requirements. During leisure, I enjoy playing basketball and team video games. It helps me develop solid communication skills and a team-oriented personality.
+summary: I recently graduated from the University of Toronto St. George with a Specialist in Computer Science and a minor in mathematics. Through 4 years' studies, I gained plenty of valuable experiences in computer science. During the University, I completed several front ends and back end projects. These experiences helped me become a team-oriented, detail-oriented, and responsible person. I'm passionate about learning new technology and always looking for new challenges. Currently, I am working for Jarvis company and mainly responsible for building several big data-related projects including Java, SQL, Springboot, Hadoop, and Cloud DevOps. Also, I'm responsible for performing the scrum methodology to ensure the success of the projects by fulfilling the requirements. During leisure, I enjoy playing basketball and team video games. It helps me develop solid communication skills and a team-oriented personality.
 
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
@@ -22,8 +22,13 @@ skills:
     - Hadoop
     - HTML
     - SpringBoot
+    - AWS
+    - Jenkins
   # At least 5 skills
   competent:
+    - Numpy
+    - Jupyter notebook
+    - Pandas
     - C
     - Node.js
     - Docker
@@ -48,7 +53,7 @@ jarvis_projects:
     git_url: "/core_java"
     description:
       - "Twitter App: Implemented an application which uses Twitter REST API. This Java application allows users to create, delete, and find a specific tweet. It uses MVC(Model–view–controller) design pattern to manage the code structure and Spring framework to manage the dependency relationship."
-      - "JDBC App: Design an application which uses JDBC to build a connection between Java and Postgres SQL database. It implements CRUD(create, read, update, delete) operations by using the Data Access Object(DAO) design pattern. "
+      - "JDBC App: Designed an application which uses JDBC to build a connection between Java and Postgres SQL database. It implements CRUD(create, read, update, delete) operations by using the Data Access Object(DAO) design pattern. "
       - "Grep App: Simulated the grep command functionality using Java. It uses the lambda function and stream API from Java to optimize the final project performance. "
   - name: "Springboot App"
     git_url: "/springboot"
@@ -58,10 +63,13 @@ jarvis_projects:
     description: "Implemented a project which is mainly about helping data analytics team to process data using Apache Hadoop and evaluate different tools and components of Hadoop. It evaluated the main components of Hadoop including including MapReduce, HDFS, and YARN. The Hadoop cluster is provisioned by Google Cloud Platform. It solved some business problems by using Apache Hive and using Zeppelin Notebook as the web-based notebook to record the HiveQL queries and evaluate the output."
   - name: "Spark"
     git_url: "/spark"
-    description: "Not started"
+    description: "in progress"
   - name: "Cloud/DevOps"
     git_url: "/cloud_devops"
-    description: "In progress"
+    description: "Used the previously developed trading application and migrate it to the AWS platform. Also used Jenkins to create the automated deployment process for the trading application. The trading application uses Three-Tier Architecture as it's overall structure. It divides the whole application into the client tier, application tier, and database tier. In this cloud-DevOps project, it uses EC2 instance to handle the application tier. It makes use of the RDS database as the database tier to persist the data. Also, It utilizes the load balancer to distribute the income traffic and uses the auto-scaling group to ensure the scalability. In addition, Elastic beanstalk is used to simplify the deployment process and provide different environments. Furthermore, Jenkins is used to creating the CI/CD pipeline. Jenkins pulls the new version from GitHub, builds, and deploys the Elastic beanstalk application."
+  - name: "python_data_wrangling"
+    git_url: "/python_data_wrangling"
+    description: "Used several technologies to provide a proof of concept for the LGS IT team. LGS IT team provided the transaction data from between 01/12/2009 and 09/12/2011 into a SQL file as the sample data set. Created a SQL data warehouse and loaded the SQL file for the OLAP purpose. Utilized Python, Jupyter Notebook, Pandas Dataframe, and Numpy for this PoC project and analytic purpose."
 
 # List of personal or academic projects
 # Feel free to add more projects
