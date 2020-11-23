@@ -11,17 +11,17 @@
   "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_SiqiYang",
   "highlighted_projects": [
     {
-      "description": "Developed a Web based Course Group Matching Application for University students.Used React.js as the front-end framework. Utilized Express.js as the back-end component and together with the MongoDB database.Capable of User authentication, matching and available for admin access, etc.Deployed on Heroku.",
+      "description": "Developed a Web-based Course Group Matching Application for University students.Used React.js as the front-end framework. Utilized Express.js as the back-end component and together with the MongoDB database. Capable of User authentication, matching and available for admin access, etc. Deployed on Heroku.",
       "git_url": "https://github.com/mephistoshadow/group_match_web_app",
       "name": "Course Group Matching Platform"
     },
     {
-      "description": "Implemented a Web based computer component review and communication system.Designed HTML front end pages with CSS and Vanilla JavaScript.Used Node.js as back-end tool and communicated with MongoDB.Final product is Capable of User authentication, sharing reviews, etc.",
+      "description": "Implemented a Web-based computer component review and communication system.Designed HTML front end pages with CSS and Vanilla JavaScript.Used Node.js as a back-end tool and communicated with MongoDB.The final product is Capable of User authentication, sharing reviews, etc.",
       "git_url": "https://github.com/mephistoshadow/computer-components_web_public",
       "name": "Computer Component Review Website"
     },
     {
-      "description": "Accomplished a Web-based student-teacher online communication platform for Action Against Hunger with a team of 7. Used AngularJS as the front-end framework. Interacted data with Firebase and Node.js as back end program. Used Scrum as meeting methodology and cooperated product development process with client. Capable of User identification, communication, etc.",
+      "description": "Accomplished a Web-based student-teacher online communication platform for Action Against Hunger with a team of 7. Used AngularJS as the front-end framework. Interacted data with Firebase and Node.js as a back-end program. Used Scrum as the meeting methodology and cooperated product development process with a client. Capable of User identification, communication, etc.",
       "name": "Student-Teacher Communication Platform"
     },
     {
@@ -31,43 +31,43 @@
   ],
   "jarvis_projects": [
     {
-      "description": "Developed an internal tool that monitors the cluster resources such as hardware information, and some usage data every one minute for each network node that is connected by a switch.Used two bash-scripts to collect the information from each host and store the data in the Database.Utilized the docker container to provision the database.",
+      "description": "Developed an internal tool that monitors the cluster resources such as hardware information, and usage data every one minute for each network node that is connected by a switch.Used two bash-scripts to collect the information from each host and store the data in the Database. Utilized the docker container to provision the database.",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
     },
     {
       "description": [
-        "Twitter App: Implemented an application which uses Twitter REST API. This Java application allows users to create, delete, and find a specific tweet. It uses MVC(Model–view–controller) design pattern to manage the code structure and Spring framework to manage the dependency relationship.",
-        "JDBC App: Designed an application which uses JDBC to build a connection between Java and Postgres SQL database. It implements CRUD(create, read, update, delete) operations by using the Data Access Object(DAO) design pattern. ",
-        "Grep App: Simulated the grep command functionality using Java. It uses the lambda function and stream API from Java to optimize the final project performance. "
+        "Twitter App: Implemented an application that uses Twitter REST API. This Java application allows users to create, delete, and find a specific tweet. It uses MVC(Model–view–controller) design pattern to manage the code structure and Spring framework to manage the dependency relationship. Used Mockito framework and Junit to do the integration and unit test. Utilized Maven to manage the project and it's dependencies.",
+        "JDBC App: Designed an application that uses JDBC to build a connection between Java and Postgres SQL database. It implements CRUD(create, read, update, delete) operations by using the Data Access Object(DAO) design pattern.",
+        "Grep App: Simulated the grep command functionality using Java. Used the lambda function and stream API from Java to optimize the final project performance."
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
     },
     {
-      "description": "Developed an online stock trading simulation REST API that supports CRUD operations on trader, account, security orders, and quotes. Front-end developers can utilize this REST API and combine it with the front-end application to achieve a complete online stock trading simulate application for various platforms. The application can be consumed by using Swagger UI or postman. This application is a microservice which is implemented by Java along with SpringBoot. It utilizes the MVC design pattern and Three-Tier architecture to manage the overall code structure. It retrieves real market data by using IEX cloud API and stores the market data into the PostgreSQL database to persist the data. It also makes use of the Mockito framework and integration test to ensure it's quality.",
+      "description": "Developed an online stock trading simulation REST API that supports CRUD operations on trader, account, security orders, and quotes. Front-end developers can utilize this REST API and combine it with the front-end application to achieve a complete online stock trading simulate application for various platforms. The application can be consumed by using Swagger UI or postman. This application is a microservice which is implemented by Java along with SpringBoot. Utilized the MVC design pattern and Three-Tier architecture to manage the overall code structure. Retrieved real market data by using IEX cloud API and stored the market data into the PostgreSQL database to persist the data. Made use of the Mockito framework and Junit to perfrom the unit test and integration test to ensure it's quality.",
       "git_url": "/springboot",
       "name": "Springboot App"
     },
     {
-      "description": "Implemented a project which is mainly about helping data analytics team to process data using Apache Hadoop and evaluate different tools and components of Hadoop. It evaluated the main components of Hadoop including including MapReduce, HDFS, and YARN. The Hadoop cluster is provisioned by Google Cloud Platform. It solved some business problems by using Apache Hive and using Zeppelin Notebook as the web-based notebook to record the HiveQL queries and evaluate the output.",
+      "description": "Implemented a project which is mainly about helping the data analytics team to process data using Apache Hadoop and evaluate different tools and components of Hadoop. Evaluated the main components of Hadoop including MapReduce, HDFS, and YARN. Provisioned the Hadoop cluster by using the Google Cloud Platform. Solved some business problems by using Apache Hive and using Zeppelin Notebook as the web-based notebook to record the HiveQL queries and evaluate the output. Explored the performance increasing when useing partition and columnar file to store data in tables.",
       "git_url": "/hadoop",
       "name": "Hadoop"
     },
     {
-      "description": "Not started",
+      "description": "In progress",
       "git_url": "/spark",
       "name": "Spark"
     },
     {
-      "description": "Used the previously developed trading application and migrate it to the AWS platform. Also used Jenkins to create the automated deployment process for the trading application. The trading application uses Three-Tier Architecture as it's overall structure. It divides the whole application into the client tier, application tier, and database tier. In this cloud-DevOps project, it uses EC2 instance to handle the application tier. It makes use of the RDS database as the database tier to persist the data. Also, It utilizes the load balancer to distribute the income traffic and uses the auto-scaling group to ensure the scalability. In addition, Elastic beanstalk is used to simplify the deployment process and provide different environments. Furthermore, Jenkins is used to creating the CI/CD pipeline. Jenkins pulls the new version from GitHub, builds, and deploys the Elastic beanstalk application.",
+      "description": "Used the previously developed trading application and migrate it to the AWS platform. Also used Jenkins to create the automated deployment process for the trading application. Utilized EC2 instance to handle the application tier. Made use of the RDS database as the database tier to persist the data. Utilized the load balancer to distribute the income traffic and used the auto-scaling group to ensure scalability. Besides, used Elastic beanstalk to simplify the deployment process and provide different environments. Furthermore, used Jenkins to creating the CI/CD pipeline. ",
       "git_url": "/cloud_devops",
       "name": "Cloud/DevOps"
     },
     {
       "description": "Used several technologies to provide a proof of concept for the LGS IT team. LGS IT team provided the transaction data from between 01/12/2009 and 09/12/2011 into a SQL file as the sample data set. Created a SQL data warehouse and loaded the SQL file for the OLAP purpose. Utilized Python, Jupyter Notebook, Pandas Dataframe, and Numpy for this PoC project and analytic purpose.",
       "git_url": "/python_data_wrangling",
-      "name": "python_data_wrangling"
+      "name": "Python_data_analytics"
     }
   ],
   "name": "Siqi Yang",
@@ -96,7 +96,6 @@
       "C",
       "Node.js",
       "Docker",
-      "MS Office",
       "CSS"
     ],
     "familiar": [
@@ -121,5 +120,5 @@
       "Jenkins"
     ]
   },
-  "summary": "I recently graduated from the University of Toronto St. George with a Specialist in Computer Science and a minor in mathematics. Through 4 years' studies, I gained plenty of valuable experiences in computer science. During the University, I completed several front ends and back end projects. These experiences helped me become a team-oriented, detail-oriented, and responsible person. I'm passionate about learning new technology and always looking for new challenges. Currently, I am working for Jarvis company and mainly responsible for building several big data-related projects including Java, SQL, Springboot, Hadoop, and Cloud DevOps. Also, I'm responsible for performing the scrum methodology to ensure the success of the projects by fulfilling the requirements. During leisure, I enjoy playing basketball and team video games. It helps me develop solid communication skills and a team-oriented personality."
+  "summary": "I recently graduated from the University of Toronto St. George with a Specialist in Computer Science and a minor in mathematics. Through 4 years' studies, I gained plenty of valuable experiences in computer science. During the University, I completed several front ends and back end projects. These experiences helped me become a team-oriented, detail-oriented, and responsible person. I'm passionate about learning new technology and always looking for new challenges. Currently, I am working for Jarvis company and mainly responsible for building several big data-related projects including Java, SQL, Springboot, Hadoop, Spark, and Cloud DevOps. Also, I'm responsible for performing the scrum methodology to ensure the success of the projects by fulfilling the requirements. During leisure, I enjoy playing basketball and team video games. It helps me develop solid communication skills and a team-oriented personality."
 }
