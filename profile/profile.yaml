@@ -51,15 +51,15 @@ jarvis_projects:
   - name: "Core Java Apps"
     git_url: "/core_java"
     description:
-      - "Twitter App: Implemented an application that uses Twitter REST API. This Java application allows users to create, delete, and find a specific tweet. It uses MVC(Model–view–controller) design pattern to manage the code structure and Spring framework to manage the dependency relationship. Used Mockito framework and Junit to do the integration and unit test. Utilized Maven to manage the project and it's dependencies."
+      - "Twitter App: Implemented an application that uses Twitter REST API. This Java application allows users to create, delete, and find a specific tweet. It uses MVC(Model–view–controller) design pattern to manage the code structure and Spring framework to manage the dependency relationship. Used Mockito framework and Junit to do the integration and unit test. Utilized Maven to manage the project and its dependencies."
       - "JDBC App: Designed an application that uses JDBC to build a connection between Java and Postgres SQL database. It implements CRUD(create, read, update, delete) operations by using the Data Access Object(DAO) design pattern."
       - "Grep App: Simulated the grep command functionality using Java. Used the lambda function and stream API from Java to optimize the final project performance."
   - name: "Springboot App"
     git_url: "/springboot"
-    description: "Developed an online stock trading simulation REST API that supports CRUD operations on trader, account, security orders, and quotes. Front-end developers can utilize this REST API and combine it with the front-end application to achieve a complete online stock trading simulate application for various platforms. The application can be consumed by using Swagger UI or postman. This application is a microservice which is implemented by Java along with SpringBoot. Utilized the MVC design pattern and Three-Tier architecture to manage the overall code structure. Retrieved real market data by using IEX cloud API and stored the market data into the PostgreSQL database to persist the data. Made use of the Mockito framework and Junit to perfrom the unit test and integration test to ensure it's quality."
+    description: "Developed an online stock trading simulation REST API that supports CRUD operations on trader, account, security orders, and quotes. Front-end developers can utilize this REST API and combine it with the front-end application to achieve a complete online stock trading simulation application for various platforms. The application can be consumed by using Swagger UI or postman. This application is a microservice which is implemented by Java along with SpringBoot. Utilized the MVC design pattern and Three-Tier architecture to manage the overall code structure. Retrieved real market data by using IEX cloud API and stored the market data into the PostgreSQL database to persist the data. Made use of the Mockito framework and Junit to perform the unit test and integration test to ensure it's quality."
   - name: "Hadoop"
     git_url: "/hadoop"
-    description: "Implemented a project which is mainly about helping the data analytics team to process data using Apache Hadoop and evaluate different tools and components of Hadoop. Evaluated the main components of Hadoop including MapReduce, HDFS, and YARN. Provisioned the Hadoop cluster by using the Google Cloud Platform. Solved some business problems by using Apache Hive and using Zeppelin Notebook as the web-based notebook to record the HiveQL queries and evaluate the output. Explored the performance increasing when useing partition and columnar file to store data in tables."
+    description: "Implemented a project which is mainly about helping the data analytics team to process data using Apache Hadoop and evaluate different tools and components of Hadoop. Evaluated the main components of Hadoop including MapReduce, HDFS, and YARN. Provisioned the Hadoop cluster by using the Google Cloud Platform. Solved some business problems by using Apache Hive and using Zeppelin Notebook as the web-based notebook to record the HiveQL queries and evaluate the output. Explored the performance increasing when using partition and columnar files to store data in tables."
   - name: "Spark"
     git_url: "/spark"
     description: "In progress"
@@ -101,7 +101,7 @@ professional_experience:
     duration: "2020-present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: "Worked on several Big Data related projects that include the Linux/Bash, Java, SpringBoot, Cloud develop, and Hadoop/Spark in an Agile team as a junior developer. 
-    Uitized the Agile/Scrum collaboration methodology, Git, and Git flow to ensure the success of the development process. 
+    Utilized the Agile/Scrum collaboration methodology, Git, and Git flow to ensure the success of the development process. 
     Used Integration and Unit test techniques to ensure the quality of the final projects."
 
 #List of edcuation
