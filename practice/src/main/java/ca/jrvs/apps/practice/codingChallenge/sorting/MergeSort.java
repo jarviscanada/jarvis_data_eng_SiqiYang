@@ -60,6 +60,6 @@ public class MergeSort {
     MergeSort mergeSort = new MergeSort();
     int[] a = {5,2,7,4,6,3,1,0};
     mergeSort.mergeSort(a,0,7);
-    System.out.print(a);
+
   }
 }

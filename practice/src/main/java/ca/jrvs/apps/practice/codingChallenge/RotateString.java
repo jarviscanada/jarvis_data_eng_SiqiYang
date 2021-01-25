@@ -1,5 +1,7 @@
 package ca.jrvs.apps.practice.codingChallenge;
 
+import java.util.Arrays;
+
 /**
  * link:https://leetcode.com/problems/rotate-string/solution/
  */
@@ -45,5 +47,6 @@ public class RotateString {
     RotateString rotateString = new RotateString();
     Boolean a = rotateString.check("ohbrwzxvxe","uornhegseo");
     System.out.print(a);
+
   }
 }
